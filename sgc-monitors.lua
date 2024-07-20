@@ -9,30 +9,9 @@ for _, name in ipairs(peripherals) do
     end
 end
 
-do
-    local interfaces = {
-        "advanced_crystal_interface",
-        "crystal_interface",
-    }
-    for i, interface in ipairs(interfaces) do
-        stargate = peripheral.find(interface)
-        if stargate then
-            tier = #interfaces - i + 1
-            break
-        end
-    end
-end
-
-local sg = peripheral.wrap("advanced_crystal_interface_8")
+local interface = peripheral.find("crystal_interface") or peripheral.find("advanced_crystal_interface")
 
 local mf = require("morefonts")
-
--- Function to display content on a specific monitor
-local function displayContent(monitor, content)
-    monitor.clear()
-    monitor.setCursorPos(1, 1)
-    monitor.write(content)
-end
 
 local sgS = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
     "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
@@ -41,11 +20,21 @@ local sgS = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
 
 while true do
 
-    local symbol = sg.getCurrentSymbol()
+    local symbol = interface.getCurrentSymbol()
+    
+    local chevron = interface.getChevronsEngaged()
     
     -- Display different content on each monitor
     if #monitors >= 1 then
-        displayContent(monitors[1], "Hello, Monitor 1!")
+        monitors[1].clear()
+        monitors[1].setTextColor(colors.blue)
+        monitors[1].setCursorPos(1,1)
+        monitors[1].setTextScale(1)
+        monitors[1].write("Chevron")
+        monitors[1].setCursorPos(1,2)
+        monitors[1].write("Engaged")
+        monitors[1].setCursorPos(4,5)
+        monitors[1].write(chevron)
     end
     if #monitors >= 2 then
         monitors[2].clear()
@@ -58,7 +47,7 @@ while true do
         })
     end
     if #monitors >= 3 then
-        displayContent(monitors[3], "Hello, Monitor 3!")
+        monitors[3].write("Hello, Monitor 3!")
     end
     sleep(1)
 end
