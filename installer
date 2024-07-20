@@ -1,0 +1,3 @@
+shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/sgc-monitors.lua")
+shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/mw720")
+shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/mw720s")
