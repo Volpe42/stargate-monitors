@@ -48,7 +48,7 @@ while true do
         monitors[2].clear()
         monitors[2].setTextColor(colors.blue)
         mf.writeOn(monitors[2], currentSymbol, nil, nil, {
-            font = "MW1280",
+            font = "mw1280",
             scale = 0.20,
             anchorHor = "center",
             anchorVer = "center",
