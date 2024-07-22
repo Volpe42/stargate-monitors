@@ -1,5 +1,5 @@
 shell.run("wget", "run", "https://github.com/MichielP1807/more-fonts/raw/main/installer.lua")
 shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/sgc-monitors.lua")
-shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/mw720")
-shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/mw720s")
-shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/mw1280")
+shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main//font/mw720")
+shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/font/mw720s")
+shell.run("wget", "https://github.com/Volpe42/stargate-monitors/raw/main/font/mw1280")
